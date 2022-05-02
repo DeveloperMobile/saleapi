@@ -3,7 +3,6 @@ package one.digitalinnovation.saleapi.mapper;
 import one.digitalinnovation.saleapi.dto.request.ClientDTO;
 import one.digitalinnovation.saleapi.entity.Client;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper

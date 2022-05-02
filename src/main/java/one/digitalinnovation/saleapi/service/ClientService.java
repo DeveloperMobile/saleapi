@@ -1,6 +1,5 @@
 package one.digitalinnovation.saleapi.service;
 
-import lombok.AllArgsConstructor;
 import one.digitalinnovation.saleapi.dto.request.ClientDTO;
 import one.digitalinnovation.saleapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.saleapi.entity.Client;
@@ -9,10 +8,7 @@ import one.digitalinnovation.saleapi.mapper.ClientMapper;
 import one.digitalinnovation.saleapi.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +19,7 @@ public class ClientService {
     public MessageResponseDTO createClient(ClientDTO clientDTO) {
         Client clientToSave = ClientMapper.INSTANCE.toModel(clientDTO);
         Client savedClient = repository.save(clientToSave);
-        return createMessageResponse(savedClient.getId(), "Created person with ID ");
+        return createMessageResponse(savedClient.getId(), "Created client with ID ");
     }
 
     public List<ClientDTO> findAll() {
